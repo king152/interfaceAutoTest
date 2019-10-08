@@ -1,0 +1,294 @@
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>学科网测试管理平台</title>
+    <link rel='shortcut icon' href="{% static '/image/favicon.ico' %}"/>
+    <link type="text/css" href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static '/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static '/css/jquery.mCustomScrollbar.min.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static '/css/custom.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static '/css/index.css' %}" rel="stylesheet">
+    {% block cont_css %}
+    {% endblock %}
+</head>
+<body>
+<div class="page-wrapper">
+    <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+            <a href="#" id="toggle-sidebar"><i class="glyphicon glyphicon-align-justify"></i></a>
+            <div class="sidebar-brand">
+                <a href="#">学科网测试管理平台</a>
+            </div>
+            <div class="sidebar-header">
+                <div class="user-pic">
+                    <img class="img-responsive img-rounded" src="{% static '/image/user.jpg' %}" alt="用户默认头像">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">欢迎 <strong id="name"></strong> 登录</span>
+                    <span class="user-role">角色：<strong id="role"></strong></span>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="/download/index/"><i class="glyphicon glyphicon-home"></i><span>首页</span></a></li>
+                    <li class="header-menu"><span><i class="glyphicon glyphicon-book"></i>功能用例管理</span></li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-download-alt"></i>
+                            <span>研一项目</span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="/download/case/rbc">记点通道</a></li>
+                                <li><a href="/download/case/wxt">网校通通道</a></li>
+                                <li><a href="#">储值通道</a></li>
+                                <li><a href="#">第三方通道</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="glyphicon glyphicon-folder-open"></i><span>题库项目</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">submenu 1</a></li>
+                                <li><a href="#">submenu 2</a></li>
+                                <li><a href="#">submenu 3</a></li>
+                                <li><a href="#">submenu 4</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-diamond"></i><span>基础应用</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">submenu 1</a></li>
+                                <li><a href="#">submenu 2</a></li>
+                                <li><a href="#">submenu 3</a></li>
+                                <li><a href="#">submenu 4</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header-menu"><span><i class="glyphicon glyphicon-log-in"></i>接口测试管理</span></li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-download-alt"></i>
+                            <span>研一项目</span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">记点通道</a></li>
+                                <li><a href="#">网校通通道</a></li>
+                                <li><a href="#">储值通道</a></li>
+                                <li><a href="#">第三方通道</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="glyphicon glyphicon-folder-open"></i><span>题库项目</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">submenu 1</a></li>
+                                <li><a href="#">submenu 2</a></li>
+                                <li><a href="#">submenu 3</a></li>
+                                <li><a href="#">submenu 4</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="fa fa-diamond"></i><span>基础应用</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">submenu 1</a></li>
+                                <li><a href="#">submenu 2</a></li>
+                                <li><a href="#">submenu 3</a></li>
+                                <li><a href="#">submenu 4</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    {#                        <li class="header-menu"><span><i class="glyphicon glyphicon-folder-close"></i>UI自动化测试管理</span></li>#}
+                    {#                        <li class="sidebar-dropdown">#}
+                    {#                            <a href="#"><i class="glyphicon glyphicon-blackboard"></i><span>学科网前端</span></a>#}
+                    {#                            <div class="sidebar-submenu">#}
+                    {#                                <ul>#}
+                    {#                                    <li><a href="#">项目一</a></li>#}
+                    {#                                    <li><a href="#">项目二</a></li>#}
+                    {#                                    <li><a href="#">项目三</a></li>#}
+                    {#                                    <li><a href="#">项目四</a></li>#}
+                    {#                                </ul>#}
+                    {#                            </div>#}
+                    {#                        </li>#}
+                    {#                        <li class="sidebar-dropdown">#}
+                    {#                            <a href="#"><i class="glyphicon glyphicon-folder-close"></i><span>学科网后台</span></a>#}
+                    {#                            <div class="sidebar-submenu">#}
+                    {#                                <ul>#}
+                    {#                                    <li><a href="#">项目一</a></li>#}
+                    {#                                    <li><a href="#">项目二</a></li>#}
+                    {#                                    <li><a href="#">项目三</a></li>#}
+                    {#                                    <li><a href="#">项目四</a></li>#}
+                    {#                                </ul>#}
+                    {#                            </div>#}
+                    {#                        </li>#}
+                    <li class="header-menu"><span><i class="glyphicon glyphicon-expand"></i>测试执行管理</span></li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="glyphicon glyphicon-tasks"></i><span>功能用例执行详情</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="/download/details/rbc">记点通道项目</a></li>
+                                <li><a href="/download/details/wxt">网校通通道项目</a></li>
+                                <li><a href="#">项目三</a></li>
+                                <li><a href="#">项目四</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="glyphicon glyphicon-tasks"></i><span>接口测试执行详情</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">项目一</a></li>
+                                <li><a href="#">项目二</a></li>
+                                <li><a href="#">项目三</a></li>
+                                <li><a href="#">项目四</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    {#                        <li class="sidebar-dropdown">#}
+                    {#                            <a href="#"><i class="glyphicon glyphicon-tasks"></i><span>UI自动化</span></a>#}
+                    {#                            <div class="sidebar-submenu">#}
+                    {#                                <ul>#}
+                    {#                                    <li><a href="#">项目一</a></li>#}
+                    {#                                    <li><a href="#">项目二</a></li>#}
+                    {#                                    <li><a href="#">项目三</a></li>#}
+                    {#                                    <li><a href="#">项目四</a></li>#}
+                    {#                                </ul>#}
+                    {#                            </div>#}
+                    {#                        </li>#}
+                    <li class="header-menu"><span><i class="glyphicon glyphicon-bed"></i>测试报告管理</span></li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="glyphicon glyphicon-stats"></i><span>功能测试报告</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="/download/report/rbc">记点通道项目</a></li>
+                                <li><a href="/download/report/wxt">网校通通道项目</a></li>
+                                <li><a href="#">项目三</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i class="glyphicon glyphicon-stats"></i><span>接口测试报告</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="#">项目一</a></li>
+                                <li><a href="#">项目二</a></li>
+                                <li><a href="#">项目三</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    {#                        <li class="sidebar-dropdown">#}
+                    {#                            <a href="#"><i class="glyphicon glyphicon-stats"></i><span>UI自动化测试报告</span></a>#}
+                    {#                            <div class="sidebar-submenu">#}
+                    {#                                <ul>#}
+                    {#                                    <li><a href="#">测试地址</a></li>#}
+                    {#                                    <li><a href="#">数据库地址</a></li>#}
+                    {#                                    <li><a href="#">其他地址</a></li>#}
+                    {#                                </ul>#}
+                    {#                            </div>#}
+                    {#                        </li>#}
+                    {% if role == "Administrator" %}
+                        <li class="header-menu"><span><i class="glyphicon glyphicon-cog"></i>系统设置</span></li>
+                        <li class="sidebar-dropdown">
+                            <a href="#"><i class="fa fa-gear"></i><span>测试环境配置</span></a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a href="#">测试地址</a></li>
+                                    <li><a href="#">数据库地址</a></li>
+                                    <li><a href="#">其他地址</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header-menu"><span><i class="glyphicon glyphicon-cog"></i>后台管理</span></li>
+                        <li class="sidebar-dropdown">
+                            <a href="#"><i class="fa fa-gear"></i><span>用户管理</span></a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a href="/userinfo/user_list/">用户列表</a></li>
+                                    <li><a href="#">用户配置</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <a href="/userinfo/logout/"><i class="fa fa-power-off"></i></a>
+        </div>
+    </nav>
+    <main class="page-content">
+        <div class="container">
+            <ol class="breadcrumb">
+                <i class="glyphicon glyphicon-home"></i>
+                <li><a href="/download/index/">首页</a></li>
+                {% block backtwo %}
+                {% endblock %}
+                {% block backend %}
+                {% endblock %}
+            </ol>
+        </div>
+        {% block content %}
+        {% endblock %}
+        {% block pages %}
+            <div aria-label="Page navigation" style="text-align: center">
+                <ul class="pagination">
+                    {% if pages.has_previous %}
+                        <li>
+                            <a href="?page={{ pages.previous_page_number }}" aria-label="Previous">
+                                <span aria-hidden="true">上一页</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% for page in pages.paginator.page_range_ext %}
+                        {% if page == pages.number %}
+                            {% if page == '...' %}
+                                <li><span>{{ page }}</span></li>
+                            {% else %}
+                                <li class="active"><span>{{ page }}</span></li>
+                            {% endif %}
+                        {% else %}
+                            {% if page == '...' %}
+                                <li><span>{{ page }}</span></li>
+                            {% else %}
+                                <li><a href="?page={{ page }}">{{ page }}</a></li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if pages.has_next %}
+                        <li>
+                            <a href="?page={{ pages.next_page_number }}" aria-label="Next">
+                                <span aria-hidden="true">下一页</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endblock %}
+    </main>
+</div>
+<script type="text/javascript" src="{% static '/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static '/js/csrf.js' %}"></script>
+<script type="text/javascript" src="{% static '/js/jquery.cookie.js' %}"></script>
+<script type="text/javascript" src="{% static '/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static '/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script type="text/javascript" src="{% static '/js/custom.js' %}"></script>
+<script type="text/javascript" src="{% static '/js/index.js' %}"></script>
+<script>
+    $.ajaxSetup({
+        data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+    });
+</script>
+{% block cont_js %}
+{% endblock %}
+</body>
+</html>

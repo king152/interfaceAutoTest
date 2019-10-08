@@ -1,0 +1,82 @@
+body {
+    background-color: #b9b9b9;
+}
+
+.container {
+    padding-top: 60px;
+}
+
+.panel-heading .panel-title {
+    font-size: 30px;
+}
+
+.panel-title {
+    text-align: center;
+}
+
+#reg_form input {
+    width: 75%;
+    float: right;
+    margin-top: 17px;
+}
+
+#reg_form label {
+    line-height: 64px;
+    text-align: right;
+    width: auto;
+}
+
+.btn-success {
+    width: 30%;
+}
+
+.panel-body {
+    position: relative;
+}
+
+/*.btns span {*/
+/*    position: absolute;*/
+/*    font-size: 19px;*/
+/*    margin-top: 21px;*/
+/*    margin-left: 60px;*/
+/*}*/
+
+.center {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.panel-primary {
+    width: 400px;
+    height: 500px;
+    margin: auto;
+}
+.btns{
+    text-align: center;
+    padding-top: 20px;
+    margin-right: -50px;
+}
+.btns .login_btn{
+    margin-right: 10px;
+}
+
+.btns .reg_btn{
+    margin-left: 60px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}

@@ -1,0 +1,163 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动化测试系统</title>
+    <link rel='shortcut icon' href="{% static '/image/favicon.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.min.css' %}">
+
+    <style>
+         *{
+            padding:0px;
+            margn:0px;
+            }
+        .table div{
+            width: 70%;
+        }
+        .table td{
+            padding-left: 5px;
+        }
+        .table>tbody>tr>td{
+            border-top: none;
+        }
+        body{
+            margin-top: 60px;
+        }
+        .container{
+            width: 1800px;
+            height: auto;
+            z-index: 1000;
+        }
+        .bounced{
+            width: auto;
+        }
+        a:link{
+            text-decoration:none;
+        }
+        a:visited{
+            text-decoration:none;
+        }
+        a:hover{
+            text-decoration:none;
+        }
+        a:active{
+            text-decoration:none;
+        }
+        .container .navbar-collapse{
+            margin-left: 20px;
+        }
+        .container .navbar-header .navbar-brand{
+            height: auto;
+            padding: 2px;
+        }
+        .container .navbar-header .navbar-brand img{
+            height: 50px;
+            width: 160px;
+        }
+        .container .navbar-collapse a{
+            padding-top:20px;
+            margin-left:100px;
+        }
+        .container .btn-success a{
+            margin: 0px;
+            width: auto;
+            height: auto;
+        }
+        .table thead th,td{
+            text-align: center;
+        }
+        td .del,.update{
+            width: 40%;
+            height: 40%;
+        }
+        .container{
+            border: 0px solid transparent;
+        }
+    </style>
+    <script>
+        function Ajax(method,url,data) {
+            $.ajax(
+                {
+                    type: method,
+                    url: url,
+                    data: $(data).serialize(),
+                    async: false,
+                    error: function (respose) {
+                        alert(respose);
+                        return false;
+                    },
+                    success: function (respose) {
+                        alert(respose);
+                        {#window.location.reload()#}
+                    }
+                });
+        }
+    </script>
+
+    </head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" id="menu-nav">
+        <div class="container" style="height: auto">
+            <div class="navbar-header">
+                <a class="navbar-brand" target="_blank" href="http://www.zxxk.com">
+                    <img src="{% static '/image/ico.png' %}" alt="logo" >
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/download/index">用例管理</a></li>
+                    <li><a href="/download/result">用例执行详情</a></li>
+                    <li>
+                        <a href="/download/submit" >测试汇总</a>
+                    </li>
+                    <li>
+                        <a href="/download/tools" >工具</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form  id="form">
+            {% csrf_token %}
+            <input type="text" name="userid" class="input-group" placeholder="输入用户id">
+            <input type="text" name="number" class="input-group" placeholder="输入抽奖次数">
+            <input type="text" name="starttime" class="input-group" placeholder="抽取资料添加开始时间">
+            <input type="text" name="endtime" class="input-group" placeholder="抽取资料添加结束时间">
+            <input type="submit" class="btn btn-default" id="submit" value="开始抽奖" onclick="Ajax('POST','/download/luckydraw/','#form')">
+        </form>
+    </div>
+
+
+
+
+     <div aria-label="Page navigation" style="text-align: center">
+              <ul class="pagination">
+                  {% if pages.has_previous %}
+                      <li>
+                          <a href="?page={{ pages.previous_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true">上一页</span>
+                          </a>
+                      </li>
+                  {% endif %}
+
+                  {% for page in pages.paginator.page_range %}
+                      <li {% if page == pages.number %} class="active" {% endif %}>
+                          <a href="?page={{ page }}">{{ page }}</a>
+                      </li>
+                  {% endfor %}
+
+                   {% if pages.has_next %}
+                        <li>
+                          <a href="?page={{ pages.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">下一页</span>
+                          </a>
+                        </li>
+                   {% endif %}
+              </ul>
+        </div>
+        <script type="text/javascript" src="{% static '/js/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static '/js/bootstrap.min.js' %}"></script>
+    </body>
+</html>

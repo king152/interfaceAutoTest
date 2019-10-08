@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block cont_css %}
+    <link type="text/css" href="{% static '/css/chart.css' %}" rel="stylesheet">
+    <style>
+    .page-wrapper .page-content {
+        height: 100ch;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container" style="margin-top: -50px">
+            <h2>学科网测试管理平台</h2>
+            <p>测试管理平台，包括测试用例、接口测试、UI自动化测试管理;平台可以进行功能用例管理，接口测试、UI自动化测试执行，可以查看执行结果及测试汇总报告。</p>
+            <p><a class="btn btn-primary btn-lg" href="/download/projectName/" role="button">查看更多</a></p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h3 style="text-align: center">汇总信息</h3>
+    <hr style="color: #46b8da">
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6">
+                <h4 >各平台用例数汇总</h4>
+                <div id="chart">
+                 <ul id="numbers">
+                    <li><span>200</span></li>
+                    <li><span>180</span></li>
+                    <li><span>160</span></li>
+                    <li><span>140</span></li>
+                    <li><span>120</span></li>
+                    <li><span>100</span></li>
+                    <li><span>80</span></li>
+                    <li><span>60</span></li>
+                    <li><span>40</span></li>
+                    <li><span>20</span></li>
+                    <li><span>0</span></li>
+                  </ul>
+                 <ul id="bars">
+                <li><div data-percentage="128" class="bar"></div><span>研一项目</span></li>
+                <li><div data-percentage="105" class="bar"></div><span>题库项目</span></li>
+                <li><div data-percentage="163" class="bar"></div><span>基础应用</span></li>
+                </li>
+              </ul>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <h4 >各平台用例执行失败数汇总</h4>
+                <div id="chart">
+                 <ul id="numbers">
+                    <li><span>100</span></li>
+                    <li><span>90</span></li>
+                    <li><span>80</span></li>
+                    <li><span>70</span></li>
+                    <li><span>60</span></li>
+                    <li><span>50</span></li>
+                    <li><span>40</span></li>
+                    <li><span>30</span></li>
+                    <li><span>20</span></li>
+                    <li><span>10</span></li>
+                    <li><span>0</span></li>
+                  </ul>
+                 <ul id="bars">
+                <li><div data-percentage="33" class="bar"></div><span>2019-08-24</span></li>
+                <li><div data-percentage="54" class="bar"></div><span>2019-08-25</span></li>
+                <li><div data-percentage="94" class="bar"></div><span>2019-08-26</span></li>
+                <li><div data-percentage="162" class="bar"></div><span>2019-08-27</span></li>
+              </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block cont_js %}
+    <script type="text/javascript" src="{% static '/js/chart.js' %}"></script>
+{% endblock %}

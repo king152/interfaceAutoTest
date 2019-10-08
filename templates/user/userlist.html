@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block backtwo %}
+    <li><a href="#">用户管理</a></li>
+{% endblock %}
+{% block backend %}
+    <li class="active"><a href="/userinfo/user_list/">用户列表</a></li>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div><h3 style="text-align: center">用户管理</h3></div>
+        <div class="table table-bordered">
+            <table class="table table-bordered" id="list-table">
+                <thead>
+                <tr>
+                    <th class="hidden">用户ID</th>
+                    <th>用户名</th>
+                    <th>邮箱</th>
+                    <th>角色</th>
+                    <th>状态</th>
+                    <th>注册时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% if pages %}
+                    {% for foo in pages %}
+                        <tr>
+                            <td class="hidden">{{ foo.id }}</td>
+                            <td>{{ foo.username }}</td>
+                            <td>{{ foo.email }}</td>
+                            <td>{{ foo.username_role }}</td>
+                            {% if foo.userState == True %}
+                                <td>启用</td>
+                            {% else %}
+                                <td>禁用</td>
+                            {% endif %}
+
+                            <td>{{ foo.regTime|date:"Y-m-d H:i:s" }}</td>
+                            <td style="width: 300px ">
+                                {% if foo.username != "admin" %}
+                                    <input type="button" value="修改" class="btn btn-default user_update"/>
+                                    <input type="button" value="删除" class="btn btn-default user_delete"/>
+                                    {% if foo.userState == True %}
+                                        <input type="button" value="禁用" class="btn btn-default user_disable"/>
+                                    {% else %}
+                                        <input type="button" value="启用" class="btn btn-default user_disable"/>
+                                    {% endif %}
+                                    <input type="button" value="重置资料ID" class="btn btn-default user_reset"/>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+                <td colspan="6">
+                    <a class="btn btn-success newUser">新增用户</a>
+                </td>
+                </tbody>
+            </table>
+            {% if not pages %}
+                <h4 style="color: #288ff2;text-align: center">暂无用户，请添加用户！</h4>
+            {% endif %}
+        </div>
+    </div>
+
+    {# 新增用户#}
+    <div class="panel panel-primary whiteContent">
+        <div class="panel-heading">
+            <h2 class="panel-title">添加用户</h2>
+        </div>
+        <div class="panel-body">
+            <form id="newUser_form">
+                <div class="hidden">
+                    <label>
+                        <input type="text" name="way" class="form-control" value="new">
+                    </label>
+                </div>
+                <div class="panel-title">
+                    <label>用户&nbsp;&nbsp;名:</label>
+                    <label>
+                        <input type="text" name="username" class="form-control user" placeholder="请输入用户名">
+                    </label>
+                    <div id="u_tips"></div>
+                </div>
+                <div class="panel-title">
+                    <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+                    <label>
+                        <input type="password" name="pwd" class="form-control pwd" placeholder="请输入密码">
+                    </label>
+                    <div id="p_tips"></div>
+                </div>
+                <div class="panel-title" style="font-size: 16px;text-align: left;margin-top: 10px">
+                    <label>用户角色:</label>
+                    <label>
+                        <select name="role" style="width: auto;height: 30px">
+                            <option value="averaged" selected="selected">普通用户</option>
+                            <option value="testers">测试人员</option>
+                            <option value="developers">开发人员</option>
+                            <option value="product">产品人员</option>
+                            <option value="Administrator">管理员</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="panel-title">
+                    <label>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:</label>
+                    <label>
+                        <input type="text" name="email" class="form-control email" placeholder="请输入邮箱">
+                    </label>
+                    <div id="e_tips"></div>
+                </div>
+                <div class="btns" style="margin-top: 5px;">
+                    <a class="btn btn-default cancel_user" style="width: 120px">取消</a>
+                    <button type="button" class="btn btn-success newCreateUser" style="width: 120px">添加</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {#     修改用户#}
+    <div id="updateUser" class="panel panel-primary updateContent">
+        <div class="panel-heading">
+            <h2 class="panel-title">修改用户</h2>
+        </div>
+        <div class="panel-body">
+            <form id="updateUser_form">
+                <div class="hidden">
+                    <label>
+                        <input type="text" name="way" class="form-control" value="update">
+                    </label>
+                </div>
+                <div class="hidden">
+                    <label>
+                        <input type="text" name="id" class="form-control id" value="">
+                    </label>
+                </div>
+                <div class="panel-title">
+                    <label>用户&nbsp;&nbsp;名:</label>
+                    <label>
+                        <input type="text" name="username" readonly class="form-control user " placeholder="请输入用户名">
+                    </label>
+                </div>
+                <div class="panel-title">
+                    <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+                    <label>
+                        <input type="password" name="pwd" class="form-control pwd" placeholder="请输入密码">
+                    </label>
+                </div>
+                <div class="panel-title" style="font-size: 16px;text-align: left;margin-top: 10px">
+                    <label>用户角色:</label>
+                    <label>
+                        <select name="role" class="role" style="width: auto;height: 30px">
+                            <option value="averaged" selected="selected">普通用户</option>
+                            <option value="testers">测试人员</option>
+                            <option value="developers">开发人员</option>
+                            <option value="product">产品人员</option>
+                            <option value="Administrator">管理员</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="panel-title">
+                    <label>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:</label>
+                    <label>
+                        <input type="text" name="email" class="form-control email" placeholder="请输入邮箱">
+                    </label>
+                </div>
+                <div class="btns" style="margin-top: 5px;">
+                    <a class="btn btn-default cancel_user" style="width: 120px">取消</a>
+                    <button type="button" class="btn btn-success updateUser" style="width: 120px">确定</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {# 黑色浮层 #}
+    <div class="black_overlay"></div>
+{% endblock %}
+
+{% block cont_js %}
+    <script type="text/javascript" src="{% static '/js/user/user_list.js' %}"></script>
+{% endblock %}
+

@@ -1,0 +1,58 @@
+* { margin: 0; padding: 0; }
+
+         html { height: 100%; }
+
+         body { height: 100%; background:url("/static/image/login_background.jpg") 0px 0px no-repeat; background-size: cover;}
+
+         span { color: #ffffff;font-weight: bold;font-size:25px }
+
+         .dowebok { position: absolute; left: 50%; top: 50%; width: 430px; height: 550px; margin: -300px 0 0 -215px; border: none ; border-radius: 20px; overflow: hidden;}
+
+         .logo { width: 162px; height: 59px; margin: 50px auto 80px; background: url(/static/image/ico.png) 0 0 no-repeat; }
+
+         .form-item { position: relative; width: 360px; margin: 0 auto; padding-bottom: 30px;}
+
+         .form-item input { width: 220px; height: 48px; padding-left: 30px; border: 1px solid #fff;  font-size: 25px; color: #ffffff; background-color:#999999; outline: none;}
+
+         .form-item button { width: 220px; height: 50px; border: 0; border-radius: 25px; font-size: 25px; font-weight: bold; color: #ffffff; outline: none; cursor: pointer; background-color: #288ff2; }
+
+         #username { background: 15px 10px no-repeat;  }
+
+         #password { background:  15px 10px no-repeat; }
+         #submit {position: relative; width: 360px; margin: 0 auto; align-content: center; padding-bottom: 8px;}
+
+         .tip { display: none; position: absolute; left: 20px; top: 52px; font-size: 14px; color: #f50; }
+
+         .reg-bar { width: 360px; margin: 20px auto 0; font-size: 14px; overflow: hidden;}
+
+         .reg-bar a { color: #ffa; text-decoration: underline; }
+
+         .reg-bar a:hover { text-decoration: underline; }
+
+         .reg-bar .reg { float: left; }
+
+         .reg-bar .forget { float: right; }
+
+         .dowebok ::-webkit-input-placeholder { font-size: 18px; line-height: 1.4; color: #fff;}
+
+         .dowebok :-moz-placeholder { font-size: 18px; line-height: 1.4; color: #fff;}
+
+         .dowebok ::-moz-placeholder { font-size: 18px; line-height: 1.4; color: #fff;}
+
+         .dowebok :-ms-input-placeholder { font-size: 18px; line-height: 1.4; color: #fff;}
+
+  
+
+         @media screen and (max-width: 500px) {
+
+             * { box-sizing: border-box; }
+
+             .dowebok { position: static; width: auto; height: auto; margin: 0 30px; border: 0; border-radius: 0; }
+
+             .logo { margin: 50px auto; }
+
+             .form-item { width: auto; }
+
+             .form-item input, .form-item button, .reg-bar { width: 100%; }
+
+         }

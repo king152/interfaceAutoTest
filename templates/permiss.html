@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block backtwo %}
+    <li><a href="#">用户管理</a></li>
+{% endblock %}
+{% block backend %}
+    <li class="active"><a href="/userinfo/user_list/">用户列表</a></li>
+{% endblock %}
+{% block content %}
+   <div class="container">
+   <div>
+       <h3 style="text-align: center;color: red">无权限访问</h3>
+   </div>
+   </div>
+{% endblock %}
+
