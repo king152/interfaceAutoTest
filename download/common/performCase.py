@@ -165,6 +165,7 @@ def stepRunCase(Step, caseId):
             unusualStepResult=getRandom()+"_提成：" + str(result[1]) + "-升点：" + str(result[2]))
     else:
         CaseResult.objects.filter(guid=Guid["guid"]).update(unusualStepResult=result[0]+'_'+getRandom())
+    print("异步执行已完成！")
 
 
 # 多线程执行

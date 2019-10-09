@@ -32,8 +32,7 @@ $(function () {
                     error: function (respose) {
                         alert(respose.result);
                     },
-                    success: function (respose) {
-                        alert(respose.result);
+                    success: function () {
                         window.location.reload();
                     }
                 });

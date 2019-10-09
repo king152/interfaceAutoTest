@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block backtwo %}
+    <li><a href="/download/projectName/">功能用例执行详情</a></li>
+{% endblock %}
+{% block backend %}
+    <li class="active"><a href="/download/details/scan">扫码通道项目</a></li>
+{% endblock %}
+{% block content %}
+    <div class="table table-bordered container">
+        <button class="btn btn-default" id="btn">异常测试</button>
+        <table class="table table-bordered" id="list-table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>选择出现异常步骤</th>
+                <th>用例编号</th>
+                <th>用例名称</th>
+                <th>预期返利金额</th>
+                <th>测试结果</th>
+                <th>测试时间</th>
+                <th>测试详情</th>
+                <th>异常测试结果</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if pages %}
+                {% for foo in pages %}
+                    <tr>
+                        <td><input type="checkbox" name="checkbox" data-id={{ foo.caseId }}></td>
+                        <td>
+                            <select id="step" name="step" style="width:auto;height: 30px">
+                                <option value="1" selected="selected">消费日志</option>
+                                <option value="2">书城日志</option>
+                                <option value="3">通道类型下载量</option>
+                                <option value="4">资料升点下载量日志流水记录</option>
+                                <option value="5">更新资料下载量</option>
+                                <option value="6">不发放奖励的用户群组</option>
+                                <option value="7">记录免费和点数资料批量</option>
+                                <option value="8">记录月度优秀下载奖励批次</option>
+                                <option value="9">月度优秀下载奖励发放</option>
+                                <option value="10">下载提成发放</option>
+                                <option value="11">月度优秀下载返利日志记录</option>
+                                <option value="12">普通下载提成返利日志记录</option>
+                                <option value="13">精品销售记录</option>
+                                <option value="14">贡献点</option>
+                                <option value="15">获取涨点屏蔽群组信息</option>
+                                <option value="16">获取升点规则信息</option>
+                                <option value="17">更新资料点数</option>
+                                <option value="18">涨点日志记录</option>
+                                <option value="19">升点后记录下载量升点日志</option>
+                                <option value="20">更新用户下载量</option>
+                                <option value="21">添加结算日志</option>
+                                <option value="22">更新快照信息状态</option>
+                            </select>
+                        </td>
+                        <td>{{ foo.caseId }}</td>
+                        <td>{{ foo.caseName }}</td>
+                        <td>{{ foo.rebateAmount }}元</td>
+                        <td class="assert">{{ foo.assertResult }}</td>
+                        <td>{{ foo.executionTime|date:"Y-m-d H:i:s" }}</td>
+                        <td>{{ foo.CaseExecutionResult }}</td>
+                        <td>{{ foo.unusualStepResult }}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+
+        </table>
+        {% if not pages %}
+                <h4 style="color: #288ff2;text-align: center">暂无用例执行结果！</h4>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block cont_js %}
+    <script type="text/javascript" src="{% static '/js/detail.js' %}"></script>
+{% endblock %}

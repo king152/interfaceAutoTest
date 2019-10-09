@@ -1,0 +1,370 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block backtwo %}
+    <li><a href="/download/projectName">研一项目</a></li>
+{% endblock %}
+{% block backend %}
+    <li class="active"><a href="/download/case/scan">扫码通道用例</a></li>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <a onclick="opendiv()" class="btn btn-success" style="font-size: 16px;color: white">新增用例</a>
+        <button class="btn btn-default Allcheck" id="allcheck">全部选择</button>
+        <button class="btn btn-default">修改用例</button>
+        <button class="btn btn-default">批量删除用例</button>
+        <button class="btn btn-default" id="btn" onclick="submitcase()">执行选择用例</button>
+        <div class="table table-bordered">
+            <table class="table table-bordered" id="list-table">
+                <caption style="text-align:center;font-size: 18px;font-weight: bold">用例列表</caption>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>功能点</th>
+                    <th>用例编号</th>
+                    <th>用例名称</th>
+                    <th>资料ID</th>
+                    <th>资料类型</th>
+                    <th>下载次数</th>
+                    <th>资料上传时间</th>
+                    <th>资料作者</th>
+                    <th>预期返利金额</th>
+                    <th class="hidden">备注信息</th>
+                    <th>下载用户身份</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% if pages %}
+                    {% for foo in pages %}
+                        <tr>
+                            <td><label>
+                                <input type="checkbox" name="checkbox" data-id={{ foo.caseId }}>
+                            </label></td>
+                            <td>{{ foo.functionPoint }}</td>
+                            <td>{{ foo.caseId }}</td>
+                            <td>{{ foo.caseName }}</td>
+                            <td>{{ foo.softId }}</td>
+                            {% if foo.softMoney != '0' %}
+                                <td>储值资料:{{ foo.softMoney }}&nbsp;储值</td>
+                            {% elif foo.softCash != '0' %}
+                                <td>第三方:{{ foo.softCash }}&nbsp;储值</td>
+                            {% elif foo.isSupply != '0' %}
+                                <td>高级点:1&nbsp;高级点</td>
+                            {% else %}
+                                <td>点数:{{ foo.softPoint }}&nbsp;点</td>
+                            {% endif %}
+                            <td>点数:{{ foo.pointDownloadNumber }}次-网校通:{{ foo.wxtDownloadNumber }}次-扫码:{{ foo.scanCodeDownloadNumber }}次</td>
+                            <td>{{ foo.addTime|date:"Y-m-d H:i:s" }}</td>
+                            <td>{{ foo.softAuthorId }}</td>
+                            <td>{{ foo.rebateAmount }}元</td>
+                            <td class="hidden">{{ foo.caseNote }}</td>
+                            <td>{{ foo.routeType }}</td>
+                            <td><input type="button" value="删除" class="del"/>
+                                <input type="button" value="修改" class="update"/></td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+                </tbody>
+            </table>
+            {% if not pages %}
+                <h4 style="color: #288ff2;text-align: center">暂无用例，请添加用例！</h4>
+            {% endif %}
+        </div>
+    </div>
+    <div class="container">
+        <button class="btn btn-default Allcheck">全部选择</button>
+        <button class="btn btn-default" id="allnotcheck">取消选择</button>
+        <button class="btn btn-default" id="btn3">反选</button>
+        <button class="btn btn-default" project="scan" id="all">执行所有用例</button>
+    </div>
+
+    {#    新增用例    #}
+    <div id="light" class="white_content">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">新增用例</h3>
+            </div>
+            <div class="panel-body">
+                <form id="form">
+                    {% csrf_token %}
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <div class="input-group hidden">
+                                    <input type="text" name="project" class="form-control" value="scan">
+                                </div>
+                                <div class="input-group hidden">
+                                    <input type="text" name="way" class="form-control" value="newCase">
+                                </div>
+                                <div class="input-group hidden">
+                                    <input type="text" name="downloadId" class="form-control" value="7">
+                                </div>
+                                <div class="input-group" style="font-size: 16px;text-align: left;padding: auto 5px">
+                                    <span class="input-group-addon" id="basic-addon1">功能点</span>
+                                    <select id="version" name="version" style="width: 80px;height: 30px">
+                                        <option value="1" selected="selected">返利</option>
+                                        <option value="2">升点</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">用例编号</span>
+                                    <input type="text" name="caseId" readonly class="form-control" autocomplete="off"
+                                           placeholder="请输入用例编号" required >
+                                </div>
+                                <span id="prompt" style="color: red;font-size: 15px;margin-left: 30px"></span>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">用例名称<span
+                                            style="color: red; "> *</span></span>
+                                    <input type="text" name="caseName" class="form-control" autocomplete="off"
+                                           placeholder="请输入用例名称" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="input-group" style="font-size: 16px;text-align: left;padding: auto 5px">
+                                    <span class="input-group-addon" id="basic-addon1">资料类型</span>
+                                    <select id="type" name="type" style="width: 80px;height: 30px">
+                                        <option value="0" selected="selected">免费</option>
+                                        <option value="1">1点</option>
+                                        <option value="2">2点</option>
+                                        <option value="3">3点</option>
+                                        <option value="4">4点</option>
+                                        <option value="5">5点</option>
+                                        <option value="6">储值</option>
+                                        <option value="7">第三方</option>
+                                        <option value="8">高级点</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">资料ID</span>
+                                    <input type="text" name="softId" class="form-control" readonly
+                                           autocomplete="off"
+                                           placeholder="请输入资料ID">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">资料上传时间<span
+                                            style="color: red; "> *</span></span>
+                                    <input type="text" name="softTime" class="form-control" autocomplete="off"
+                                           placeholder="请输入资料添加时间" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">资料上传人</span>
+                                    <input type="text" name="softAuthorId" class="form-control" autocomplete="off"
+                                           placeholder="请输入资料作者ID">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">返利金额<span
+                                            style="color: red; "> *</span></span>
+                                    <input type="text" name="rebate" class="form-control" autocomplete="off"
+                                           placeholder="请输入金额数" required>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">下载量<span
+                                            style="color: red; "> *</span></span>
+                                    <input type="text" name="number" class="form-control" autocomplete="off"
+                                           placeholder="网校通点数扫码分别以,分割" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="input-group" style="font-size: 16px;text-align: left;padding: auto 5px">
+                                    <span class="input-group-addon" id="basic-addon1">是否连续升点</span>
+                                    <select id="level" name="level" style="width: 80px;height: 30px">
+                                        <option value="0">是</option>
+                                        <option value="1" selected="selected">否</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">用例备注</span>
+                                    <input type="text" name="caseNote" class="form-control"
+                                           placeholder="最多输入200字符">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="button" id="submit" class="btn btn-default" value="新增">
+                        </div>
+                        <div class="col-md-1">
+                            <input type="button" class="btn btn-default" value="取消" onclick="closediv()">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {#    修改用例    #}
+    <div id="update" class="white_content">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">修改用例</h3>
+            </div>
+            <div class="panel-body">
+                <span id="tips" style="color: red;font-size: 20px;margin-left: 200px;"></span>
+                <form id="updateform">
+                    {% csrf_token %}
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <div class="input-group hidden">
+                                    <input type="text" name="project" class="form-control" value="scan">
+                                </div>
+                                <div class="input-group hidden">
+                                    <input type="text" name="way" class="form-control" value="updateCase">
+                                </div>
+                                <div class="input-group" style="font-size: 16px;text-align: left;padding: auto 5px">
+                                    <span class="input-group-addon" id="basic-addon1">测试功能点</span>
+                                    <select id="func1" name="version" style="width: 80px;height: 30px">
+                                        <option value="1" selected="selected">返利</option>
+                                        <option value="2">升点</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">用例编号<span
+                                            style="color: red; "> *</span></span>
+                                    <input type="text" name="caseId" id="caseid1" readonly class="form-control"
+                                           autocomplete="off" placeholder="请输入用例编号">
+                                </div>
+                                <span id="prompt" style="color: red;font-size: 15px;margin-left: 30px"></span>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">用例名称<span
+                                            style="color: red; "> *</span></span>
+                                    <input type="text" name="caseName" id="casename1" class="form-control"
+                                           autocomplete="off" placeholder="请输入用例名称" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="input-group" style="font-size: 16px;text-align: left;padding: auto 5px">
+                                    <span class="input-group-addon" id="basic-addon1">资料类型</span>
+                                    <select id="type1" name="type" style="width: 80px;height: 30px">
+                                        <option value="0" selected="selected">免费</option>
+                                        <option value="1">1点</option>
+                                        <option value="2">2点</option>
+                                        <option value="3">3点</option>
+                                        <option value="4">4点</option>
+                                        <option value="5">5点</option>
+                                        <option value="6">储值</option>
+                                        <option value="7">第三方</option>
+                                        <option value="8">高级点</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">资料ID<span
+                                            style="color: red; "> *</span></span>
+                                    <input type="text" name="softId" id="softid1" class="form-control"
+                                           autocomplete="off"
+                                           placeholder="请输入资料ID">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">资料添加时间<span
+                                            style="color: red; "> *</span></span>
+                                    <input type="text" name="softTime" id="softtime1" class="form-control"
+                                           autocomplete="off" placeholder="请输入资料添加时间" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="input-group" style="font-size: 16px;text-align: left;padding: auto 5px">
+                                    <span class="input-group-addon" id="basic-addon1">下载类型</span>
+                                    <select id="downloadID1" name="downloadId" style="width: auto;height: 30px">
+                                        <option value="20" selected="selected">初中高端网校通</option>
+                                        <option value="23">高中高端网校通</option>
+                                        <option value="21">初中中端网校通</option>
+                                        <option value="22">初中普通网校通</option>
+                                        <option value="24">高中中端网校通</option>
+                                        <option value="25">高中普通网校通</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">资料上传人<span
+                                            style="color: red; "> *</span></span>
+                                    <input type="text" name="softAuthorId" id="softauthorid1" class="form-control"
+                                           autocomplete="off" placeholder="请输入资料作者ID">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">返利金额<span
+                                            style="color: red; "> *</span></span>
+                                    <input type="text" name="rebate" id="assercontent1" class="form-control"
+                                           autocomplete="off" placeholder="请输入金额数" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="input-group" style="font-size: 16px;text-align: left;padding: auto 5px">
+                                    <span class="input-group-addon" id="basic-addon1">连续升点</span>
+                                    <select id="level1" name="level" style="width: 80px;height: 30px">
+                                        <option value="0">是</option>
+                                        <option value="1" selected="selected">否</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">下载量<span
+                                            style="color: red; "> *</span></span>
+                                    <input type="text" name="number" id="number1" class="form-control"
+                                           autocomplete="off"
+                                           placeholder="网校通点数扫码分别以,分割" required>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">用例备注</span>
+                                    <input type="text" name="caseNote" id="casenote1" class="form-control"
+                                           placeholder="最多输入200字符">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="button" id="updatabtn" class="btn btn-default" value="修改">
+                        </div>
+                        <div class="col-md-1">
+                            <input type="button" class="btn btn-default" id="cancal" value="取消">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="fade" class="black_overlay"></div>
+{% endblock %}
