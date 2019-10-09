@@ -12,15 +12,14 @@ $(function () {
 //获取选择的值
 $(function () {
     $("#btn").click(function () {
-        const btn = confirm("确定执行用例吗？");
         const $cased = $("#list-table").find('input:checked').attr('data-id');
         const $step = $(":checked").parents('td').next().find("option:selected").text();
         const $guid = $(":checked").parents('td').siblings();
         if ($("#list-table").find('input:checked').length === 0) {
             alert("请选择执行异常用例！");
             return false;
-        } else {
-        }
+        } else {}
+        const btn = confirm("确定执行用例吗？");
         if (btn) {
             //通过ajax提交数据到后台
             $.ajax(
