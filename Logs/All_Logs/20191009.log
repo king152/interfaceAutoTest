@@ -1,0 +1,252 @@
+2019-10-09 08:32:34,228 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:32:34,273 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:32:34,273 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:32:34,299 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为Zxxk_Log_ForTest！
+2019-10-09 08:32:34,301 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:32:34,329 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload！
+2019-10-09 08:32:34,329 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:32:34,355 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkForDownloadTest！
+2019-10-09 08:32:34,355 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:32:34,380 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为Zxxk_Log！
+2019-10-09 08:38:05,055 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:05,072 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:38:05,078 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE ID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:05,085 - MySqlServer - INFO - 执行数据库语句为：DELETE dbo.Cl_ConsumeLog201909 WHERE InfoID='7673229' AND ConsumeTime='2019-10-08 17:17:06'
+2019-10-09 08:38:05,247 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='2' WHERE StepName='RecordConsumeLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:05,458 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordConsumeLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:05,492 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.Cl_DownloadCountInfo SET ShoolUserDownNum='5',PointUserDownNum='3',QRCodeUserDownNum='1',DownNum=NULL WHERE InfoID='7673229'
+2019-10-09 08:38:05,523 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:05,555 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:38:05,706 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordDowninterfaceHits' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:05,746 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:38:05,751 - MySqlServer - INFO - 查询语句为：select * from dbo.Cl_SoftDownInfoLog WHERE InfoID='7673229' AND SoftPoint='0'
+2019-10-09 08:38:05,759 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.Cl_SoftDownInfoLog SET DownCount='' WHERE InfoID='' AND SoftPoint=''
+2019-10-09 08:38:05,951 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordIncrePointFlowLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:05,979 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:06,017 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为Zxxk_Hits！
+2019-10-09 08:38:06,022 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_SoftDownloadHits WHERE SoftID='7673229'
+2019-10-09 08:38:06,028 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.Cl_SoftDownloadHits SET Hits='' WHERE SoftID=''
+2019-10-09 08:38:06,179 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='UpdateSoftDownloadHit' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:06,376 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='GetFeedbackShieledUserGroupInfo' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:06,418 - MySqlServer - INFO - 执行数据库语句为：DELETE FROM dbo.Cl_FreePointDownFeeBackLog WHERE UserID='28755951'
+2019-10-09 08:38:06,614 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordFreePointDownFeeBackLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:06,634 - MySqlServer - INFO - 执行数据库语句为：DELETE dbo.Cl_MonthlyExcellentDownFeeBackLog WHERE SoftID=7673229
+2019-10-09 08:38:06,828 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordMonthlyExcellentDownFeeBackLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:07,034 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='AssetIncreasedMonthlyExcellentDown' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:07,224 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='AsserIncreasedForNormalFeeBack' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:07,247 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:07,280 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkAward_ForTest！
+2019-10-09 08:38:07,286 - MySqlServer - INFO - 执行数据库语句为：DELETE  dbo.Cl_FeeBackLog2019 WHERE FeeBackBusinessType='1' AND SoftID='7673229'
+2019-10-09 08:38:07,461 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='FeeBackLogForMonthly' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:07,563 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:07,579 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkAward_ForTest！
+2019-10-09 08:38:07,581 - MySqlServer - INFO - 执行数据库语句为：DELETE  dbo.Cl_FeeBackLog2019 WHERE FeeBackBusinessType='0' AND SoftID='7673229'
+2019-10-09 08:38:08,078 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='FeeBackLogForNormal' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:08,340 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordSellIncomeLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:08,517 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordUserGivePoint' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:08,726 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='GetIncrePointShieledGroupInfo' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:09,004 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0',StepResult=NULL WHERE StepName='GetIncrePointRuleInfo' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:09,021 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:09,049 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkForDownloadTest！
+2019-10-09 08:38:09,216 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='UpdateSoftPoint' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:09,526 - MySqlServer - INFO - 执行数据库语句为：DELETE FROM dbo.Cl_PointIncreInfoLog WHERE  InfoID='7673229'
+2019-10-09 08:38:09,755 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordSoftPointIncreInfoLogAndUpdateDownNum' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:09,969 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordFlowLogAfterSoftPointIncre' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:10,167 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='UpdateUserDown' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:10,204 - MySqlServer - INFO - 执行数据库语句为：DELETE FROM dbo.Cl_WXTConsumeLog201910 WHERE InfoID='7673229'
+2019-10-09 08:38:10,356 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='HighWXTConsumeLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:10,393 - MySqlServer - INFO - 查询语句为：SELECT * FROM dbo.Cl_WXTDownLoadStatistics WHERE InfoID='7673229'
+2019-10-09 08:38:10,533 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='HighWxtDownLoadStatisticsLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:10,730 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='AddSettlementLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:10,924 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='UpdateDownInfoStatus' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:10,943 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.Cl_DownInfo SET Status='2' WHERE ID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:10,971 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:11,005 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:38:11,005 - TestCase - INFO - 开始查询资料状态，查询softid为：7673229
+2019-10-09 08:38:11,010 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE SoftID='7673229' AND AddTime>='2019-10-08 17:17:06'
+2019-10-09 08:38:11,012 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:38:11,012 - TestCase - INFO - 查询资料状态完成，查询softid为：7673229
+2019-10-09 08:38:11,012 - TestCase - INFO - 查询资料7673229的状态为：2
+2019-10-09 08:38:11,514 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:11,541 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:38:11,541 - TestCase - INFO - 开始查询资料状态，查询softid为：7673229
+2019-10-09 08:38:11,546 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE SoftID='7673229' AND AddTime>='2019-10-08 17:17:06'
+2019-10-09 08:38:11,547 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:38:11,547 - TestCase - INFO - 查询资料状态完成，查询softid为：7673229
+2019-10-09 08:38:11,547 - TestCase - INFO - 查询资料7673229的状态为：2
+2019-10-09 08:38:12,048 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:12,083 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:38:12,084 - TestCase - INFO - 开始查询资料状态，查询softid为：7673229
+2019-10-09 08:38:12,089 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE SoftID='7673229' AND AddTime>='2019-10-08 17:17:06'
+2019-10-09 08:38:12,093 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:38:12,093 - TestCase - INFO - 查询资料状态完成，查询softid为：7673229
+2019-10-09 08:38:12,093 - TestCase - INFO - 查询资料7673229的状态为：2
+2019-10-09 08:38:12,594 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:12,616 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:38:12,616 - TestCase - INFO - 开始查询资料状态，查询softid为：7673229
+2019-10-09 08:38:12,623 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE SoftID='7673229' AND AddTime>='2019-10-08 17:17:06'
+2019-10-09 08:38:12,624 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:38:12,624 - TestCase - INFO - 查询资料状态完成，查询softid为：7673229
+2019-10-09 08:38:12,624 - TestCase - INFO - 查询资料7673229的状态为：1
+2019-10-09 08:38:12,625 - MySql - INFO - 开始连接数据库10.1.1.6...
+2019-10-09 08:38:12,670 - MySql - INFO - 连接数据库10.1.1.6成功,库名%s！
+2019-10-09 08:38:12,670 - TestCase - INFO - 开始查询返利信息
+2019-10-09 08:38:12,673 - MySql - INFO - SELECT *FROM T_IncomeRecord WHERE UserID='28755951' AND AddTime>='2019-10-09 08:38:05'
+2019-10-09 08:38:12,673 - TestCase - INFO - 查询返利金额完成，Income金额列表为:[0.5]
+2019-10-09 08:38:12,673 - TestCase - INFO - 返回返利总和：0.5元
+2019-10-09 08:38:13,175 - MySql - INFO - 关闭数据库10.1.1.6连接,库名uc
+2019-10-09 08:38:20,132 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:20,151 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:38:20,156 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE ID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:20,320 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='2' WHERE StepName='RecordConsumeLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:20,359 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.Cl_DownloadCountInfo SET ShoolUserDownNum='5',PointUserDownNum='3',QRCodeUserDownNum='1',DownNum=NULL WHERE InfoID='7673229'
+2019-10-09 08:38:20,416 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:20,448 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:38:20,732 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordDowninterfaceHits' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:20,757 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:38:20,763 - MySqlServer - INFO - 查询语句为：select * from dbo.Cl_SoftDownInfoLog WHERE InfoID='7673229' AND SoftPoint='0'
+2019-10-09 08:38:20,770 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.Cl_SoftDownInfoLog SET DownCount='' WHERE InfoID='' AND SoftPoint=''
+2019-10-09 08:38:21,037 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordIncrePointFlowLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:21,060 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:21,094 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为Zxxk_Hits！
+2019-10-09 08:38:21,097 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_SoftDownloadHits WHERE SoftID='7673229'
+2019-10-09 08:38:21,099 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.Cl_SoftDownloadHits SET Hits='' WHERE SoftID=''
+2019-10-09 08:38:21,251 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='UpdateSoftDownloadHit' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:21,438 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='GetFeedbackShieledUserGroupInfo' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:21,469 - MySqlServer - INFO - 执行数据库语句为：DELETE FROM dbo.Cl_FreePointDownFeeBackLog WHERE UserID='28755951'
+2019-10-09 08:38:21,748 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordFreePointDownFeeBackLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:21,769 - MySqlServer - INFO - 执行数据库语句为：DELETE dbo.Cl_MonthlyExcellentDownFeeBackLog WHERE SoftID=7673229
+2019-10-09 08:38:21,925 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordMonthlyExcellentDownFeeBackLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:22,141 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='AssetIncreasedMonthlyExcellentDown' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:22,304 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='AsserIncreasedForNormalFeeBack' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:22,318 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:22,340 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkAward_ForTest！
+2019-10-09 08:38:22,342 - MySqlServer - INFO - 执行数据库语句为：DELETE  dbo.Cl_FeeBackLog2019 WHERE FeeBackBusinessType='1' AND SoftID='7673229'
+2019-10-09 08:38:22,541 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='FeeBackLogForMonthly' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:22,560 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:22,618 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkAward_ForTest！
+2019-10-09 08:38:22,622 - MySqlServer - INFO - 执行数据库语句为：DELETE  dbo.Cl_FeeBackLog2019 WHERE FeeBackBusinessType='0' AND SoftID='7673229'
+2019-10-09 08:38:22,805 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='FeeBackLogForNormal' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:23,009 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordSellIncomeLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:23,208 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordUserGivePoint' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:23,414 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='GetIncrePointShieledGroupInfo' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:23,619 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0',StepResult=NULL WHERE StepName='GetIncrePointRuleInfo' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:23,634 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:23,679 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkForDownloadTest！
+2019-10-09 08:38:23,862 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='UpdateSoftPoint' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:23,990 - MySqlServer - INFO - 执行数据库语句为：DELETE FROM dbo.Cl_PointIncreInfoLog WHERE  InfoID='7673229'
+2019-10-09 08:38:24,151 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordSoftPointIncreInfoLogAndUpdateDownNum' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:24,387 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordFlowLogAfterSoftPointIncre' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:24,550 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='UpdateUserDown' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:24,570 - MySqlServer - INFO - 执行数据库语句为：DELETE FROM dbo.Cl_WXTConsumeLog201910 WHERE InfoID='7673229'
+2019-10-09 08:38:24,702 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='HighWXTConsumeLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:24,736 - MySqlServer - INFO - 查询语句为：SELECT * FROM dbo.Cl_WXTDownLoadStatistics WHERE InfoID='7673229'
+2019-10-09 08:38:24,883 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='HighWxtDownLoadStatisticsLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:25,066 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='AddSettlementLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:25,220 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='UpdateDownInfoStatus' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:25,243 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.Cl_DownInfo SET Status='2' WHERE ID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:38:25,266 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:25,282 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:38:25,282 - TestCase - INFO - 开始查询资料状态，查询softid为：7673229
+2019-10-09 08:38:25,287 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE SoftID='7673229' AND AddTime>='2019-10-08 17:17:06'
+2019-10-09 08:38:25,288 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:38:25,288 - TestCase - INFO - 查询资料状态完成，查询softid为：7673229
+2019-10-09 08:38:25,288 - TestCase - INFO - 查询资料7673229的状态为：2
+2019-10-09 08:38:25,789 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:25,806 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:38:25,807 - TestCase - INFO - 开始查询资料状态，查询softid为：7673229
+2019-10-09 08:38:25,812 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE SoftID='7673229' AND AddTime>='2019-10-08 17:17:06'
+2019-10-09 08:38:25,813 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:38:25,813 - TestCase - INFO - 查询资料状态完成，查询softid为：7673229
+2019-10-09 08:38:25,813 - TestCase - INFO - 查询资料7673229的状态为：2
+2019-10-09 08:38:26,333 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:38:26,353 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:38:26,353 - TestCase - INFO - 开始查询资料状态，查询softid为：7673229
+2019-10-09 08:38:26,357 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE SoftID='7673229' AND AddTime>='2019-10-08 17:17:06'
+2019-10-09 08:38:26,358 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:38:26,358 - TestCase - INFO - 查询资料状态完成，查询softid为：7673229
+2019-10-09 08:38:26,358 - TestCase - INFO - 查询资料7673229的状态为：1
+2019-10-09 08:38:26,358 - MySql - INFO - 开始连接数据库10.1.1.6...
+2019-10-09 08:38:26,406 - MySql - INFO - 连接数据库10.1.1.6成功,库名%s！
+2019-10-09 08:38:26,406 - TestCase - INFO - 开始查询返利信息
+2019-10-09 08:38:26,410 - MySql - INFO - SELECT *FROM T_IncomeRecord WHERE UserID='28755951' AND AddTime>='2019-10-09 08:38:20'
+2019-10-09 08:38:26,410 - TestCase - INFO - 查询返利金额完成，Income金额列表为:[0.5]
+2019-10-09 08:38:26,410 - TestCase - INFO - 返回返利总和：0.5元
+2019-10-09 08:38:26,911 - MySql - INFO - 关闭数据库10.1.1.6连接,库名uc
+2019-10-09 08:40:29,702 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:40:29,728 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:40:29,733 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE ID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:29,745 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.Cl_DownloadCountInfo SET ShoolUserDownNum='5',PointUserDownNum='3',QRCodeUserDownNum='1',DownNum=NULL WHERE InfoID='7673229'
+2019-10-09 08:40:29,814 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:40:29,831 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:40:29,982 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='2' WHERE StepName='RecordDowninterfaceHits' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:30,016 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:40:30,019 - MySqlServer - INFO - 查询语句为：select * from dbo.Cl_SoftDownInfoLog WHERE InfoID='7673229' AND SoftPoint='0'
+2019-10-09 08:40:30,026 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.Cl_SoftDownInfoLog SET DownCount='' WHERE InfoID='' AND SoftPoint=''
+2019-10-09 08:40:30,170 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordIncrePointFlowLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:30,187 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:40:30,215 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为Zxxk_Hits！
+2019-10-09 08:40:30,218 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_SoftDownloadHits WHERE SoftID='7673229'
+2019-10-09 08:40:30,220 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.Cl_SoftDownloadHits SET Hits='' WHERE SoftID=''
+2019-10-09 08:40:30,371 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='UpdateSoftDownloadHit' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:30,530 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='GetFeedbackShieledUserGroupInfo' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:30,548 - MySqlServer - INFO - 执行数据库语句为：DELETE FROM dbo.Cl_FreePointDownFeeBackLog WHERE UserID='28755951'
+2019-10-09 08:40:30,728 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordFreePointDownFeeBackLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:30,748 - MySqlServer - INFO - 执行数据库语句为：DELETE dbo.Cl_MonthlyExcellentDownFeeBackLog WHERE SoftID=7673229
+2019-10-09 08:40:30,907 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordMonthlyExcellentDownFeeBackLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:31,086 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='AssetIncreasedMonthlyExcellentDown' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:31,253 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='AsserIncreasedForNormalFeeBack' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:31,271 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:40:31,306 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkAward_ForTest！
+2019-10-09 08:40:31,309 - MySqlServer - INFO - 执行数据库语句为：DELETE  dbo.Cl_FeeBackLog2019 WHERE FeeBackBusinessType='1' AND SoftID='7673229'
+2019-10-09 08:40:31,451 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='FeeBackLogForMonthly' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:31,462 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:40:31,491 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkAward_ForTest！
+2019-10-09 08:40:31,494 - MySqlServer - INFO - 执行数据库语句为：DELETE  dbo.Cl_FeeBackLog2019 WHERE FeeBackBusinessType='0' AND SoftID='7673229'
+2019-10-09 08:40:31,779 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='FeeBackLogForNormal' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:32,068 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordSellIncomeLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:32,289 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordUserGivePoint' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:32,617 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='GetIncrePointShieledGroupInfo' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:32,840 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0',StepResult=NULL WHERE StepName='GetIncrePointRuleInfo' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:32,853 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:40:32,871 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkForDownloadTest！
+2019-10-09 08:40:33,019 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='UpdateSoftPoint' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:33,155 - MySqlServer - INFO - 执行数据库语句为：DELETE FROM dbo.Cl_PointIncreInfoLog WHERE  InfoID='7673229'
+2019-10-09 08:40:33,597 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordSoftPointIncreInfoLogAndUpdateDownNum' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:33,932 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='RecordFlowLogAfterSoftPointIncre' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:34,078 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='UpdateUserDown' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:34,097 - MySqlServer - INFO - 执行数据库语句为：DELETE FROM dbo.Cl_WXTConsumeLog201910 WHERE InfoID='7673229'
+2019-10-09 08:40:34,235 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='HighWXTConsumeLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:34,265 - MySqlServer - INFO - 查询语句为：SELECT * FROM dbo.Cl_WXTDownLoadStatistics WHERE InfoID='7673229'
+2019-10-09 08:40:34,418 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='HighWxtDownLoadStatisticsLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:34,571 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='AddSettlementLog' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:34,725 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.B_StepInstanceInfo SET StepStatus='0' WHERE StepName='UpdateDownInfoStatus' AND DownInfoID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:34,746 - MySqlServer - INFO - 执行数据库语句为：UPDATE dbo.Cl_DownInfo SET Status='2' WHERE ID='f298b9b4-95da-4351-8cb4-9cd0aa12e797'
+2019-10-09 08:40:34,760 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:40:34,799 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:40:34,799 - TestCase - INFO - 开始查询资料状态，查询softid为：7673229
+2019-10-09 08:40:34,805 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE SoftID='7673229' AND AddTime>='2019-10-08 17:17:06'
+2019-10-09 08:40:34,808 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:40:34,809 - TestCase - INFO - 查询资料状态完成，查询softid为：7673229
+2019-10-09 08:40:34,809 - TestCase - INFO - 查询资料7673229的状态为：2
+2019-10-09 08:40:35,310 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:40:35,327 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:40:35,327 - TestCase - INFO - 开始查询资料状态，查询softid为：7673229
+2019-10-09 08:40:35,332 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE SoftID='7673229' AND AddTime>='2019-10-08 17:17:06'
+2019-10-09 08:40:35,333 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:40:35,333 - TestCase - INFO - 查询资料状态完成，查询softid为：7673229
+2019-10-09 08:40:35,333 - TestCase - INFO - 查询资料7673229的状态为：2
+2019-10-09 08:40:35,835 - MySqlServer - INFO - 开始连接数据库10.1.5.70...
+2019-10-09 08:40:35,863 - MySqlServer - INFO - 连接数据库10.1.5.70成功,库名为ZxxkDownload_ForTest！
+2019-10-09 08:40:35,863 - TestCase - INFO - 开始查询资料状态，查询softid为：7673229
+2019-10-09 08:40:35,869 - MySqlServer - INFO - 查询语句为：SELECT *FROM dbo.Cl_DownInfo WHERE SoftID='7673229' AND AddTime>='2019-10-08 17:17:06'
+2019-10-09 08:40:35,872 - MySqlServer - INFO - 关闭数据库10.1.5.70连接,库名ZxxkDownload_ForTest
+2019-10-09 08:40:35,872 - TestCase - INFO - 查询资料状态完成，查询softid为：7673229
+2019-10-09 08:40:35,872 - TestCase - INFO - 查询资料7673229的状态为：1
+2019-10-09 08:40:35,873 - MySql - INFO - 开始连接数据库10.1.1.6...
+2019-10-09 08:40:35,920 - MySql - INFO - 连接数据库10.1.1.6成功,库名%s！
+2019-10-09 08:40:35,920 - TestCase - INFO - 开始查询返利信息
+2019-10-09 08:40:35,924 - MySql - INFO - SELECT *FROM T_IncomeRecord WHERE UserID='28755951' AND AddTime>='2019-10-09 08:40:29'
+2019-10-09 08:40:35,925 - TestCase - INFO - 查询返利金额完成，Income金额列表为:[0.5]
+2019-10-09 08:40:35,925 - TestCase - INFO - 返回返利总和：0.5元
+2019-10-09 08:40:36,426 - MySql - INFO - 关闭数据库10.1.1.6连接,库名uc
