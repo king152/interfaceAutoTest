@@ -13,7 +13,9 @@
             <thead>
             <tr>
                 <th></th>
-                <th>选择出现异常步骤</th>
+                {% if role == "Administrator" %}
+                    <th>选择出现异常步骤</th>
+                {% endif %}
                 <th>用例编号</th>
                 <th>用例名称</th>
                 <th>预期返利金额</th>
@@ -28,7 +30,8 @@
                 {% for foo in pages %}
                     <tr>
                         <td><input type="checkbox" name="checkbox" data-id={{ foo.caseId }}></td>
-                        <td>
+                        {% if role == "Administrator" %}
+                             <td>
                             <select id="step" name="step" style="width:auto;height: 30px">
                                 <option value="1" selected="selected">消费日志</option>
                                 <option value="2">书城日志</option>
@@ -58,6 +61,7 @@
                                 <option value="24">更新快照信息状态</option>
                             </select>
                         </td>
+                        {% endif %}
                         <td>{{ foo.caseId }}</td>
                         <td>{{ foo.caseName }}</td>
                         <td>{{ foo.rebateAmount }}元</td>
