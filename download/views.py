@@ -195,6 +195,12 @@ def startTestCase(request):
         ids = request.POST.get("data[caseId]")
         project = request.POST.get("data[project]")
         username = request.session.get("username")
+        role = request.COOKIES.get("userRoles")
+
+        userList = ['testers', 'Administrator']
+        if role not in userList:
+            result = {'result': '当时用户无权限执行用例！'}
+            return HttpResponse(json.dumps(result))
 
         # 开启一个线程去执行用例
         threading.Thread(target=runCase, args=(ids, username, project,)).start()
@@ -205,12 +211,18 @@ def startTestCase(request):
 
 
 # 步骤化执行用例功能
-def stepTestCase(req):
-    if req.method == "POST":
-        data = req.POST.get("data[data]").split(',')
+def stepTestCase(request):
+    if request.method == "POST":
+        data = request.POST.get("data[data]").split(',')
         caseId = data[0]
         step = data[1]
         print(caseId, step)
+
+        role = request.COOKIES.get("userRoles")
+        userList = ['testers', 'Administrator']
+        if role not in userList:
+            result = {'result': '当时用户无权限执行用例！'}
+            return HttpResponse(json.dumps(result))
         # 开启一个线程运行
         threading.Thread(target=stepRunCase, args=(step, caseId,)).start()
 
